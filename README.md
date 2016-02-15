@@ -39,28 +39,28 @@ Building and Using your own Firmware
 ------------------------------------
 We provide a Makefile for your use in building and using your own Firmware.  
 
-Once you have cloned this repository to your own local subdirectory, for example:
+To get started, clone this repository to your own local directory for example:
 
-    $ git clone https://github.com/magicshifter/MS3000.git ./MS3000.local && cd ./MS3000.local/
+    $ git clone https://github.com/magicshifter/MS3000.git && cd ./MS3000
     
 .. the next 4 basic steps to build a new image and flash it on your MagicShifter 3000 are:
 
 	$ make tooling
 	
-This will check that you have the tools required to build the Firmware. - i.e. the PlatformIO toolchain, React 0.14, NodeJS 5.6.
+This will check that you have the tools required to build the Firmware. - i.e. PlatformIO and NodeJS 
 
 	$ make modules
 	
 This will make the build-product of each module.  
 	
 	$ make firmware
+	
+This will package the components of the MagicShifter 3000 Operating System into a local file for your use.
 
 	$ make flash
-	
 
-    git clone https://github.com/magicshifter/MS3000.git MS3000.public && cd MS3000.public && git submodule init && git submodule update --recursive && make ms3kos
-    
-    
+This will flash the firmware image to your MagicShifter 3000.
+	
 
 Contact Us
 ==========
