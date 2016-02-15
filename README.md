@@ -52,7 +52,7 @@ To get started, clone this repository to your own local directory for example:
 
 	$ make modules
 	
-This will make the build-product of each sub-module.  Note that the first time you do this, it can take a while for the independencies to install - but subsequent installs shouldn't take as long.
+This will make the build-product of each sub-module.  Note that the first time you do this, it can take a while for the independencies to install - but subsequent builds shouldn't take as long.
 	
 	$ make flash
 	
@@ -63,6 +63,8 @@ Note that if you want to give your MagicShifter 3000 a network-name other than t
 	$ MS3000_NAME=MyName make flash
 
 .. where "MyName" is your name.  It should be short, sweet, and useful.
+
+Note that if you do not want to re-flash the entire package each time, you can also use the 'make os' command to update the Firmware (OS) independently from the Assets and WebInterface.
 
 
 Debugging Tools
