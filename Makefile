@@ -13,6 +13,7 @@ tooling:
 
 MS3000-Assets/README.md MS3000-Firmware/README.md MS3000-WebInterface/README.md:
 	git submodule init && git submodule update --recursive
+	git submodule foreach git checkout master
 
 modules:	MS3000-Assets/README.md MS3000-Firmware/README.md MS3000-WebInterface/README.md
 	make -C MS3000-WebInterface/ install && make -C MS3000-WebInterface/ build
@@ -24,3 +25,6 @@ flash:	modules
 	( cd ./MS3000-Firmware/Tools && ./MS3000_init.sh ${MS3000_NAME} ${MS3000_PORT} )
 	( cd ./MS3000-Firmware/MS3KOS/ && make test && make monitor )
 
+update:
+	git submodule foreach git pull 
+	git submodule foreach git checkout master
