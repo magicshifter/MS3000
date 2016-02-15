@@ -39,28 +39,36 @@ Building and Using your own Firmware
 ------------------------------------
 We provide a Makefile for your use in building and using your own Firmware.  
 
+
 To get started, clone this repository to your own local directory for example:
 
     $ git clone https://github.com/magicshifter/MS3000.git && cd ./MS3000
     
-.. the next 4 basic steps to build a new image and flash it on your MagicShifter 3000 are:
+.. then, check that you have the right tools to build the firmware:
 
 	$ make tooling
-	
-This will check that you have the tools required to build the Firmware. - i.e. PlatformIO and NodeJS 
+
+.. and then make the firmware modules:	
 
 	$ make modules
 	
-This will make the build-product of each module.  
+This will make the build-product of each sub-module.  Note that the first time you do this, it can take a while for the independencies to install - but subsequent installs shouldn't take as long.
 	
-	$ make firmware
-	
-This will package the components of the MagicShifter 3000 Operating System into a local file for your use.
-
 	$ make flash
-
-This will flash the firmware image to your MagicShifter 3000.
 	
+This will install the components of the MagicShifter 3000 Operating System on your device.
+
+Note that if you want to give your MagicShifter 3000 a network-name other than the default ("MS3000"), you can invoke this command like this:
+
+	$ MS3000_NAME=MyName make flash
+
+.. where "MyName" is your name.  It should be short, sweet, and useful.
+
+
+Debugging Tools
+---------------
+
+If you want to debug the MS3K Firmware, you can use the platformio tools to gain debug info - see the "make test" target in MS3000-Firmware/MS3KOS/Makefile for example.
 
 Contact Us
 ==========
