@@ -1,0 +1,9 @@
+[submodule "MS3000-Assets"]
+	path = MS3000-Assets
+	url = https://github.com/magicshifter/MS3000-Assets.git
+[submodule "MS3000-Firmware"]
+	path = MS3000-Firmware
+	url = https://github.com/magicshifter/MS3000-Firmware.git
+[submodule "MS3000-WebInterface"]
+	path = MS3000-WebInterface
+	url = https://github.com/magicshifter/MS3000-WebInterface.git
