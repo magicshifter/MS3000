@@ -11,7 +11,7 @@ MS3000-Assets/README.md MS3000-Firmware/README.md MS3000-WebInterface/README.md:
 	git submodule init && git submodule update --recursive
 
 modules:	MS3000-Assets/README.md MS3000-Firmware/README.md MS3000-WebInterface/README.md
-	make -C MS3000-WebInterface/ install && make -C MS3000-WebInterface/
+	make -C MS3000-WebInterface/ install && make -C MS3000-WebInterface/ build
 	make -C MS3000-Assets/
 	make -C MS3000-Firmware/
 
