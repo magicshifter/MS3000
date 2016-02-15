@@ -56,7 +56,7 @@ This will make the build-product of each sub-module.  Note that the first time y
 	
 	$ make flash
 	
-This will install the components of the MagicShifter 3000 Operating System on your device.
+This will install the components of the MagicShifter 3000 Operating System on your device.  Make sure your MagicShifter 3000 is plugged into your machine and turned on!
 
 Note that if you want to give your MagicShifter 3000 a network-name other than the default ("MS3000"), you can invoke this command like this:
 
