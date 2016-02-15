@@ -26,11 +26,13 @@ filesystem:
 
 os:
 	@echo "Flashing MS3KOS"
+	@(echo "Make sure your MagicShifter 3000 is plugged in and turned on, then press any key to continue..." && read -n 1 -s)
 	( cd ./MS3000-Firmware/MS3KOS/ && make test && make monitor )
 
 flash_os:
 	@echo "Flashing MS3KOS"
-	( cd ./MS3000-Firmware/MS3KOS/ && make )
+	@(echo "Make sure your MagicShifter 3000 is plugged in and turned on, then press any key to continue..." && read -n 1 -s)
+	( cd ./MS3000-Firmware/MS3KOS/ && make test )
 
 
 flash:	modules	flash_os filesystem 
