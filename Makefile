@@ -5,7 +5,7 @@
 MS3000_NAME?=MS3000
 MS3000_PORT?=`pio serialports list --json-output | python -c 'exec("""\nimport json,sys\n\nobj=json.load(sys.stdin)\nfor y in obj:\n if "10C4:EA60" in y["hwid"]:\n  print y["port"]\n""")'`
 
-all: tooling modules firmware flash
+all: tooling modules flash
 
 tooling:
 	@(`which pio` > /dev/null && echo "You have PlatformIO installed..") || (echo "You must have pio installed, please see: http://platformio.org/" && exit 1)
@@ -24,5 +24,3 @@ flash:	modules
 	( cd ./MS3000-Firmware/Tools && ./MS3000_init.sh ${MS3000_NAME} ${MS3000_PORT} )
 	( cd ./MS3000-Firmware/MS3KOS/ && make test )
 
-
-all:	flash
