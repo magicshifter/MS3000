@@ -30,7 +30,7 @@ So, this master project contains 3 sub-modules: Firmware, WebInterface and Asset
 Module Facts
 ------------
 *	Firmware: A C/C++ project, targeting the ESP8266 processor used in the MagicShifter 3000.  The entry point is src/MS3KOS.cpp.
-*	WebInterface: a React-based web application designed to be served directly from the MagicShifter 3000.  
+*	WebInterface: a React-based web application designed to be served directly from the MagicShifter 3000. This is the website you see when you visit http://magicshifter.local/ for example.
 *	Assets: Static files, such as initial bitmaps and fonts, that are needed/used by either of the other components to provide functionality.
 
 Please note: each module has its own README.md too!
