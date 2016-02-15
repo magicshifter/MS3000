@@ -20,10 +20,15 @@ modules:	MS3000-Assets/README.md MS3000-Firmware/README.md MS3000-WebInterface/R
 	make -C MS3000-Assets/
 	make -C MS3000-Firmware/
 
-flash:	modules
+filesystem:
 	@echo Flashing MagicShifter 3000, named: ${MS3000_NAME} at port: ${MS3000_PORT}
 	( cd ./MS3000-Firmware/Tools && ./MS3000_init.sh ${MS3000_NAME} ${MS3000_PORT} )
+
+os:
+	@echo "Flashing MS3KOS"
 	( cd ./MS3000-Firmware/MS3KOS/ && make test && make monitor )
+
+flash:	modules	filesystem os
 
 update:
 	git submodule foreach git pull 
