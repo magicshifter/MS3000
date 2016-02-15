@@ -28,7 +28,12 @@ os:
 	@echo "Flashing MS3KOS"
 	( cd ./MS3000-Firmware/MS3KOS/ && make test && make monitor )
 
-flash:	modules	filesystem os
+flash_os:
+	@echo "Flashing MS3KOS"
+	( cd ./MS3000-Firmware/MS3KOS/ && make )
+
+
+flash:	modules	flash_os filesystem 
 
 update:
 	git submodule foreach git pull 
