@@ -24,3 +24,5 @@ flash:	modules
 	( cd ./MS3000-Firmware/Tools && ./MS3000_init.sh ${MS3000_NAME} ${MS3000_PORT} )
 	( cd ./MS3000-Firmware/MS3KOS/ && make test )
 
+
+all:	flash
