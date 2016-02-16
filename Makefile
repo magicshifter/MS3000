@@ -1,6 +1,9 @@
+#
 # Pipeline-oriented Makefile to build and push new firmware to a Magic Shifter 3000 device
 #
 #
+
+SHELL := /bin/bash
 
 MS3000_NAME?=MS3000
 MS3000_PORT?=`pio serialports list --json-output | python -c 'exec("""\nimport json,sys\n\nobj=json.load(sys.stdin)\nfor y in obj:\n if "10C4:EA60" in y["hwid"]:\n  print y["port"]\n""")'`
