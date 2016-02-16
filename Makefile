@@ -36,6 +36,7 @@ flash_os:
 
 
 flash:	modules	flash_os filesystem 
+	make -C MS3000-Firmware/ reset-device
 
 update:
 	git pull
