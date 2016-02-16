@@ -36,7 +36,7 @@ flash_os:
 
 
 flash:	modules	flash_os filesystem 
-	make -C MS3000-Firmware/ reset-device
+	make -C MS3000-Firmware/MS3KOS/ reset-device
 
 update:
 	git pull
