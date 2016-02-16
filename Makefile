@@ -21,17 +21,17 @@ modules:	MS3000-Assets/README.md MS3000-Firmware/README.md MS3000-WebInterface/R
 
 filesystem:
 	@echo Flashing MagicShifter 3000, named: ${MS3000_NAME} at port: ${MS3000_PORT}
-	@(read -p "Make sure your MagicShifter 3000 is plugged in and turned on, then press any key to continue...")
+	@(read -n 1 -p "Make sure your MagicShifter 3000 is plugged in and turned on, then press any key to continue...")
 	( cd ./MS3000-Firmware/Tools && ./MS3000_init.sh ${MS3000_NAME} ${MS3000_PORT} )
 
 os:
 	@echo "Flashing MS3KOS"
-	@(read -p "Make sure your MagicShifter 3000 is plugged in and turned on, then press any key to continue...")
+	@(read -n 1 -p "Make sure your MagicShifter 3000 is plugged in and turned on, then press any key to continue...")
 	( cd ./MS3000-Firmware/MS3KOS/ && make test && make monitor )
 
 flash_os:
 	@echo "Flashing MS3KOS"
-	@(read -p "Make sure your MagicShifter 3000 is plugged in and turned on, then press any key to continue...")
+	@(read -n 1 -p "Make sure your MagicShifter 3000 is plugged in and turned on, then press any key to continue...")
 	( cd ./MS3000-Firmware/MS3KOS/ && make test )
 
 
