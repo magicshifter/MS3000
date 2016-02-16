@@ -38,5 +38,6 @@ flash_os:
 flash:	modules	flash_os filesystem 
 
 update:
+	git pull
 	git submodule foreach git pull 
 	git submodule foreach git checkout master
