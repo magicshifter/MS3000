@@ -20,18 +20,18 @@ modules:	MS3000-Assets/README.md MS3000-Firmware/README.md MS3000-WebInterface/R
 	make -C MS3000-Firmware/
 
 filesystem:
-	@echo Flashing MagicShifter 3000, named: ${MS3000_NAME} at port: ${MS3000_PORT}
-	@(read -n 1 -p "Make sure your MagicShifter 3000 is plugged in and turned on, then press any key to continue...")
+	@echo Flashing filesystem to the MagicShifter 3000, named: ${MS3000_NAME} to be found at port: ${MS3000_PORT}
+	@read -n 1 -p "Make sure the Magic Shifter is on and ready, then: Press any key to continue..." null
 	( cd ./MS3000-Firmware/Tools && ./MS3000_init.sh ${MS3000_NAME} ${MS3000_PORT} )
 
 os:
-	@echo "Flashing MS3KOS"
-	@(read -n 1 -p "Make sure your MagicShifter 3000 is plugged in and turned on, then press any key to continue...")
+	@echo "Ready to flash the OS to the MagicShifter 3000, then show debug messages .."
+	@read -n 1 -p "Make sure the Magic Shifter is on and ready, then: Press any key to continue..." null
 	( cd ./MS3000-Firmware/MS3KOS/ && make test && make monitor )
 
 flash_os:
-	@echo "Flashing MS3KOS"
-	@(read -n 1 -p "Make sure your MagicShifter 3000 is plugged in and turned on, then press any key to continue...")
+	@echo "Ready to flash the OS to the MagicShifter 3000."
+	@read -n 1 -p "Make sure your MagicShifter 3000 is plugged in and turned on, then press any key to continue..." null
 	( cd ./MS3000-Firmware/MS3KOS/ && make test )
 
 
