@@ -15,6 +15,10 @@ License
 This Software is licensed to you under the [AGPL License.](http://www.gnu.org/licenses/agpl.html) 
 Any use of this software implies agreement with this license.
 
+Flashing precompiled firmware releases
+-----------------------------
+If you are NOT interested in building the firmware yourself and just want to flash one of our official firmware releases have a look at the instructions for this here: https://github.com/magicshifter/MS3000/wiki/FirmwareUpdate
+
 Requirements
 ------------
 We use the PlatformIO toolchain to build firmware for the MagicShifter 3000 hardware.  You must have this installed before you proceed. If you know nothing about PlatformIO, please see [PlatformIO](http://platformio.org/) and follow the installation instructions for your preferred dev platform.
