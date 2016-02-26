@@ -23,6 +23,8 @@ Requirements
 ------------
 We use the PlatformIO toolchain to build firmware for the MagicShifter 3000 hardware.  You must have this installed before you proceed. If you know nothing about PlatformIO, please see [PlatformIO](http://platformio.org/) and follow the installation instructions for your preferred dev platform.
 
+You need a recent Node.js installation. Please refer to [Installing Node.js via package manager](https://nodejs.org/en/download/package-manager/) or the [Node.js Downloads page](https://nodejs.org/en/download/).
+
 Note that our system is designed to be built at the command-line - i.e. we use and support the continued use of the platformio tools at the command-line through a set of Makefiles - this makes it easier to automate building and testing.  We suggest that you feel free to use any IDE you like, once you can at least complete a command-line build first.
 
 Description
