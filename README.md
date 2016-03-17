@@ -4,11 +4,15 @@ Master Repository for the MagicShifter 3000 Operating System project
 
 Welcome to the MagicShifter 3000 Public Firmware release, source code repository.  
 
-The purpose of this repository is to give you the ability to build your own Firmware for the MagicShifter 3000 hardware.
+We will always publish our official MagicShifter3000 firmware source releases at this repository:
+
+https://github.com/magicshifter/MS3000
+
+The purpose of this source release and public repository is to give you the ability to build your own Firmware for the MagicShifter 3000 hardware, from our released sources - and hopefully encourage you to contribute pull requests if you feel like it!
 
 For public enquiries, i.e. non-developer information about the MagicShifter, see http://magicshifter.net/  
 
-We hope that this resource will be of use to anyone who wants to make their MagicShifter 3000 do cool things.  We'll be helping any way we can - but we do expect that you will know what you are doing beyond this point.  RTFM, and as always: have fun!
+We hope that this resource will be of use to any developer who wants to make their MagicShifter 3000 do cool things and find interesting uses for it as a device.  We'll be helping any way we can - but we do expect that you will know what you are doing beyond this point.  RTFM, and as always: have fun!
 
 License
 -------
