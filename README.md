@@ -86,4 +86,6 @@ If you want to debug the MS3K Firmware, you can use the platformio tools to gain
 Contact Us
 ==========
 
-We hope you will use this resource to put your MagicShifter 3000 to great use!  Click here to let us know what you've done with your MagicShifter 3000!
+We hope you will use this resource to put your MagicShifter 3000 to great use!  
+
+Use this Issue to let us know what you're doing with yours: https://github.com/magicshifter/MS3000/issues/5 
