@@ -10,6 +10,3 @@
 	path = MS3000-WebInterface
 	url = https://github.com/magicshifter/MS3000-WebInterface.git
 	branch = master
-[submodule "MS3000-Schematic"]
-	path = MS3000-Schematic
-	url = git@github.com:magicshifter/MS3000-Schematic.git
