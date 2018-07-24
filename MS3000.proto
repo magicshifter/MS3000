@@ -3,7 +3,7 @@
 
 syntax = "proto2";
 
-message RGB { 
+message RGB {
     required int32 R = 1 [default = 0];
     required int32 G = 2 [default = 0];
     required int32 B = 3 [default = 0];
@@ -11,12 +11,14 @@ message RGB {
 
 // MS3000 Global object
 message MS3KG {
-    message Modes {
+    required Modes modes = 1;
 
+    message Modes {
         required string current = 1;
+        required Light light = 2;
 
         // MODE: magivPOV
-        message MagicPOV { 
+        message MagicPOV {
             required string name = 1 [ default = "magic"];
 
             message User {
@@ -24,30 +26,24 @@ message MS3KG {
             }
 
         }
- 
-        // MODE: Lighting
-        message Lighting { 
+
+        // MODE: Light
+        message Light {
             required string name = 1 [ default = "light"];
 
-            enum LightningMode {    
+            enum LightMode {
                 RAINBOW = 0;
                 NORMAL = 1;
                 SCANNER_RGB = 2;
                 SCANNER_BW = 3;
             }
-            required LightningMode sub_mode = 2 ;
-            required RGB color_RGB = 3;
+            required LightMode subMode = 2;
+            required RGB color = 3;
         }
 
         message Arpi {
             required string name = 1 [default = "arpi"];
         }
-        
     }
-
-    required Modes current = 2;
-
-    // left for example - !J! remove 
-    required int32 lucky_number = 3;
 }
 
