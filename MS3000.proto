@@ -13,6 +13,13 @@ message RGB {
 message MS3KG {
     required Modes modes = 1;
 
+    message AP_INFO {
+        required string networkName = 1;
+        required string password = 2;
+    }
+
+    required string networkName = 2 [ default = "MS3000"];
+
     message Modes {
         required string current = 1;
         required Light light = 2;
