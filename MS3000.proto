@@ -50,8 +50,8 @@ message MS3KG {
 
         message Beat {
             enum BeatMode {
-                CENTER = 0;
-                SIDE = 1;
+                SIDE = 0;
+                CENTER = 1;
             }
 
             required BeatMode beatMode = 1 [ default = SIDE ];
