@@ -23,6 +23,8 @@ message MS3KG {
     message Modes {
         required string current = 1;
         required Light light = 2;
+        required Beat beat = 3;
+        required Arpi arpi = 4;
 
         // MODE: magivPOV
         message MagicPOV {
@@ -36,7 +38,6 @@ message MS3KG {
 
         // MODE: Light
         message Light {
-            required string name = 1 [ default = "light"];
 
             enum LightMode {
                 RAINBOW = 0;
@@ -46,6 +47,17 @@ message MS3KG {
             }
             required LightMode subMode = 2;
             required RGB color = 3;
+        }
+
+        message Beat {
+            enum BeatMode {
+                CENTER = 0;
+                SIDE = 1;
+            }
+
+            required BeatMode beatMode = 1 [ default = SIDE ];
+            required int32 sensitivity = 2 [ default = 2 ];
+
         }
 
         message Arpi {
