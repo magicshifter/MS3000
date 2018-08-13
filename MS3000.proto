@@ -24,7 +24,6 @@ message MS3KG {
         required string current = 1;
         required Light light = 2;
         required Beat beat = 3;
-        required Arpi arpi = 4;
 
         // MODE: magivPOV
         message MagicPOV {
@@ -60,9 +59,6 @@ message MS3KG {
 
         }
 
-        message Arpi {
-            required string name = 1 [default = "arpi"];
-        }
     }
 }
 
