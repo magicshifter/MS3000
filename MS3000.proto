@@ -11,41 +11,45 @@ message RGB {
 
 // MS3000 Global object
 message MS3KG {
-    required Modes modes = 1;
-
     message AP_INFO {
         required string networkName = 1;
-        required string password = 2;
+        optional string password = 2;
     }
 
-    required string networkName = 2 [ default = "MS3000"];
+    optional Modes modes = 1;
+    //optional AP_INFO apInfo = 2;
+
 
     message Modes {
-        required string current = 1;
-        required Light light = 2;
-        required Beat beat = 3;
+        enum ModeTypes {
+            Mode_MagicPov= 0;
+            Mode_Light= 1;
+            Mode_Magnet= 2;
+            Mode_Beat= 4;
+        }
+        optional ModeTypes currentMode = 1;
+
+        optional MagicPov magicPov = 2;
+        optional Light light = 3;
+        optional Magnet magnet = 4;
+        optional Beat beat = 5;
 
         // MODE: magivPOV
-        message MagicPOV {
-            required string name = 1 [ default = "magic"];
-
-            message User {
-                required string image = 2 [ default = "ourlogo"];
-            }
-
+        message MagicPov {
+            optional string image = 1;
         }
 
         // MODE: Light
         message Light {
-
             enum LightMode {
                 RAINBOW = 0;
                 NORMAL = 1;
                 SCANNER_RGB = 2;
                 SCANNER_BW = 3;
             }
-            required LightMode subMode = 2;
-            required RGB color = 3;
+
+            optional LightMode subMode = 2;
+            optional RGB color = 3;
         }
 
         message Beat {
@@ -54,9 +58,18 @@ message MS3KG {
                 CENTER = 1;
             }
 
-            required BeatMode beatMode = 1 [ default = SIDE ];
-            required int32 sensitivity = 2 [ default = 2 ];
+            optional BeatMode beatMode = 1 [ default = SIDE ];
+            optional int32 sensitivity = 2 [ default = 2 ];
+        }
 
+        message Magnet {
+            enum MagnetMode {
+                BARS = 0;
+                BARS_DOT = 1;
+                DOTS = 2;
+            }
+
+            optional MagnetMode mode = 1 [ default = BARS ];
         }
 
     }
