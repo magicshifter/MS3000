@@ -63,6 +63,7 @@ message MS3KG {
 
             optional BeatMode beatMode = 1 [ default = SIDE ];
             optional int32 sensitivity = 2 [ default = 2 ];
+            optional RGB color = 3;
         }
 
         message Magnet {
