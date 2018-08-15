@@ -25,7 +25,10 @@ message MS3KG {
             Mode_MagicPov= 0;
             Mode_Light= 1;
             Mode_Magnet= 2;
-            Mode_Beat= 4;
+            Mode_Values = 3;
+            Mode_Remote =4;
+            Mode_Beat= 5;
+            Mode_Countdown= 6;
         }
         optional ModeTypes currentMode = 1;
 
