@@ -5,14 +5,14 @@ syntax = "proto2";
 
 message RGB {
     required int32 R = 1 [default = 0];
-    required int32 G = 2 [default = 0];
+    required int32 G = 2 [default = 113];
     required int32 B = 3 [default = 0];
 }
 
 // MS3000 Global object
 message MS3000GlobalPBuffer {
     message AP_INFO {
-        required string networkName = 1;
+        optional string networkName = 1;
         optional string password = 2;
     }
 
@@ -52,7 +52,7 @@ message MS3000GlobalPBuffer {
             }
 
             optional LightMode subMode = 2;
-            optional RGB color = 3;
+            required RGB color = 3;
         }
 
         message Beat {
