@@ -10,7 +10,7 @@ message RGB {
 }
 
 // MS3000 Global object
-message MS3KG {
+message MS3000GlobalPBuffer {
     message AP_INFO {
         required string networkName = 1;
         optional string password = 2;
