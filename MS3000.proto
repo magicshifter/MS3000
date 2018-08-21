@@ -1,79 +1,118 @@
-// A very simple protocol definition, consisting of only
-// one message.
+//
+// proto definitions for MS3KOS 2.0 release
+//
+// each MS3KOS Mode implementation (src/Modes/*) can declare
+// its own persistent protocol buffer values as needed.
+// careful of putting too much stuff in here - i.e. use locals
+// and consider the global pBuf entry as a 'use as needed'
+// way to sync.
+// 
+// changes to this file propagate to the web interface,
+// which generates the relevant GUI.
+//
+// MS3KOS also uses the protocol buffer for wire sync.
+//
 
 syntax = "proto2";
 
 message RGB {
-    required int32 R = 1 [default = 0];
-    required int32 G = 2 [default = 113];
+    // !J! safety orange TODO: s/255, 121, 0/ -> 0/
+    required int32 R = 1 [default = 255];
+    required int32 G = 2 [default = 121]; 
     required int32 B = 3 [default = 0];
 }
 
 // MS3000 Global object
-message MS3000GlobalPBuffer {
-    message AP_INFO {
-        optional string networkName = 1;
-        optional string password = 2;
-    }
+message MS3KG {
 
-    optional Modes modes = 1;
+    message SysPref {
+        message AP_INFO {
+            optional string networkName = 1;
+            optional string password = 2;
+        }
+    }
+    
+    optional App applications = 1;
     //optional AP_INFO apInfo = 2;
 
+    message App {
 
-    message Modes {
-        enum ModeTypes {
-            Mode_MagicPov= 0;
-            Mode_Light= 1;
-            Mode_Magnet= 2;
-            Mode_Values = 3;
-            Mode_Remote =4;
-            Mode_Beat= 5;
-            Mode_Countdown= 6;
+        enum T {
+            _MagicPov= 0;
+            _Light= 1;
+            _Magnet= 2;
+            _System = 3;
+            _Remote =4;
+            _Beat= 5;
+            _Countdown= 6;
+            _Arpi = 7;
         }
-        optional ModeTypes currentMode = 1;
+
+        optional T current = 1;
 
         optional MagicPov magicPov = 2;
         optional Light light = 3;
         optional Magnet magnet = 4;
-        optional Beat beat = 5;
+        optional System system = 5; 
+        optional Remote remote = 6;
+        optional Beat beat = 7;
+        optional Countdown countdown = 8;
+        optional Arpi arpi = 9;
 
         // MODE: magivPOV
         message MagicPov {
             optional string image = 1;
         }
 
-        // MODE: Light
         message Light {
-            enum LightMode {
+            enum LightSubMode {
                 RAINBOW = 0;
                 NORMAL = 1;
                 SCANNER_RGB = 2;
                 SCANNER_BW = 3;
             }
 
-            optional LightMode subMode = 2;
-            required RGB color = 3;
+            optional LightSubMode mode = 1;
+            optional RGB color = 2;
         }
 
-        message Beat {
-            enum BeatMode {
-                SIDE = 0;
-                CENTER = 1;
-            }
-
-            optional BeatMode beatMode = 1 [ default = SIDE ];
-            optional int32 sensitivity = 2 [ default = 2 ];
-            optional RGB color = 3;
-        }
 
         message Magnet {
-            enum MagnetMode {
+            enum MagnetSubMode {
                 BARS = 0;
                 BARS_DOT = 1;
                 DOTS = 2;
             }
 
-            optional MagnetMode mode = 1 [ default = BARS ];
+            optional MagnetSubMode mode = 1 [ default = BARS ];
+        }
+
+
+        message System {
+
+        }
+
+        message Remote {
+
+        }
+
+        message Beat {
+            enum BeatSubMode {
+                SIDE = 0;
+                CENTER = 1;
+            }
+
+            optional BeatSubMode mode = 1 [ default = SIDE ];
+            optional int32 sensitivity = 2 [ default = 2 ];
+            optional RGB color = 3;
+        }
+
+        message Countdown { 
+
+        }
+
+        message Arpi {
+
         }
 
     }
