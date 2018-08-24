@@ -65,55 +65,81 @@ message MS3KG {
         }
 
         message Light {
-            enum LightSubMode {
+            enum Mode {
                 RAINBOW = 0;
                 NORMAL = 1;
                 SCANNER_RGB = 2;
                 SCANNER_BW = 3;
             }
 
-            optional LightSubMode mode = 1;
+            optional Mode mode = 1 [ default = RAINBOW ];
             optional RGB color = 2;
+            optional int32 colorIndex = 3;
         }
 
 
         message Magnet {
-            enum MagnetSubMode {
+            enum Mode {
                 BARS = 0;
                 BARS_DOT = 1;
                 DOTS = 2;
+                OTHER = 3;
             }
 
-            optional MagnetSubMode mode = 1 [ default = BARS ];
+            optional Mode mode = 1 [ default = BARS ];
         }
 
-
         message System {
+            enum Mode {
+                VERSION = 0;
+                WIFI = 1;
+                SSID = 2;
+                IP = 3;
+                SOFTIP = 4;
+                POWER_LO = 5;
+                POWER_HI = 6;
+                POWER_VALUE = 7;
+                CALIBRATION = 8;
+            }
 
+            optional Mode mode = 1 [ default = VERSION ];
         }
 
         message Remote {
-
         }
 
         message Beat {
-            enum BeatSubMode {
+            enum Mode {
                 SIDE = 0;
                 CENTER = 1;
             }
 
-            optional BeatSubMode mode = 1 [ default = SIDE ];
+            optional Mode mode = 1 [ default = SIDE ];
             optional int32 sensitivity = 2 [ default = 2 ];
             optional RGB color = 3;
         }
 
         message Countdown { 
 
+            enum Mode {
+                DOWN_1S = 0;
+                DOWN_5S = 1;
+                DOWN_10S = 2;
+                DOWN_30S = 3;
+                DOWN_1M = 4;
+                DOWN_5M = 5;
+                DOWN_10M = 6;
+                DOWN_30M = 7;
+            }            
+
+            optional Mode mode = 1 [ default = DOWN_1M ];
+
         }
+
 
         message Arpi {
-
         }
+
 
     }
 }
