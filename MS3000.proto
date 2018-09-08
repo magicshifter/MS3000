@@ -23,14 +23,14 @@ message RGB {
 }
 
 message MIDI_SEQUENCE8 {
-    required int32 N0 = 1 [default = 0];
-    required int32 N1 = 2 [default = 0];
-    required int32 N2 = 3 [default = 0];
-    required int32 N3 = 4 [default = 0];
-    required int32 N4 = 5 [default = 0];
-    required int32 N5 = 6 [default = 0];
-    required int32 N6 = 7 [default = 0];
-    required int32 N7 = 8 [default = 0];
+    required int32 STEP0 = 1 [default = 0];
+    required int32 STEP1 = 2 [default = 0];
+    required int32 STEP2 = 3 [default = 0];
+    required int32 STEP3 = 4 [default = 0];
+    required int32 STEP4 = 5 [default = 0];
+    required int32 STEP5 = 6 [default = 0];
+    required int32 STEP6 = 7 [default = 0];
+    required int32 STEP7 = 8 [default = 0];
 }
 
 // MS3000 Global object
