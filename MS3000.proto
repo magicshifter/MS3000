@@ -22,6 +22,17 @@ message RGB {
     required int32 B = 3 [default = 0];
 }
 
+message MIDI_SEQUENCE8 {
+    required int32 N0 = 1 [default = 0];
+    required int32 N1 = 2 [default = 0];
+    required int32 N2 = 3 [default = 0];
+    required int32 N3 = 4 [default = 0];
+    required int32 N4 = 5 [default = 0];
+    required int32 N5 = 6 [default = 0];
+    required int32 N6 = 7 [default = 0];
+    required int32 N7 = 8 [default = 0];
+}
+
 // MS3000 Global object
 message MS3KG {
 
@@ -46,6 +57,7 @@ message MS3KG {
             _Beat= 5;
             _Countdown= 6;
             _Arpi = 7;
+            _Sequi = 8;
         }
 
         optional T current = 1;
@@ -58,6 +70,8 @@ message MS3KG {
         optional Beat beat = 7;
         optional Countdown countdown = 8;
         optional Arpi arpi = 9;
+        optional Sequi sequi = 10;
+
 
         // MODE: magivPOV
         message MagicPov {
@@ -140,6 +154,9 @@ message MS3KG {
         message Arpi {
         }
 
+        message Sequi {
+            optional MIDI_SEQUENCE8 sequence = 1;
+        }
 
     }
 }
