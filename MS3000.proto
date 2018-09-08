@@ -136,8 +136,20 @@ message MS3KG {
 
         }
 
-
         message Arpi {
+            enum Mode {
+                ARP1 = 0;
+                ARP2 = 1;
+                ARP3 = 2;
+                ARP4 = 3;
+                ARP5 = 4;
+                ARP6 = 5;
+                ARP7 = 6;
+                ARP8 = 7;
+            }
+
+            optional Mode mode = 1 [ default = ARP8 ];
+
         }
 
 
