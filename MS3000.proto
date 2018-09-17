@@ -6,7 +6,7 @@
 // careful of putting too much stuff in here - i.e. use locals
 // and consider the global pBuf entry as a 'use as needed'
 // way to sync.
-// 
+//
 // changes to this file propagate to the web interface,
 // which generates the relevant GUI.
 //
@@ -18,7 +18,7 @@ syntax = "proto2";
 message RGB {
     // !J! safety orange TODO: s/255, 121, 0/ -> 0/
     required int32 R = 1 [default = 255];
-    required int32 G = 2 [default = 121]; 
+    required int32 G = 2 [default = 121];
     required int32 B = 3 [default = 0];
 }
 
@@ -29,7 +29,7 @@ message RGB {
 // Octave     C  C#   D  D#   E   F  F#   G  G#   A  A#   B
 //
 //  -1        0   1   2   3   4   5   6   7   8   9  10  11
-//   0       12  13  14  15  16  17  18  19  20  21  21  23  
+//   0       12  13  14  15  16  17  18  19  20  21  21  23
 //   1       24  25  26  27  28  29  30  31  32  33  34  35
 //   2       36  37  38  39  40  41  42  43  44  45  46  47
 //   3       48  49  50  51  52  53  54  55  56  57  58  59
@@ -41,9 +41,13 @@ message RGB {
 //   9      120 121 122 123 124 125 126 127
 //
 
+message MIDI_OCTAVE {
+    required int32 v = 1 [default = 5];    //      (5+1)
+}
+
 message MIDI_STEP {
-    required int32 STEP = 1 [default = 0 ];     //      C5 = 6 * 12 = (MIDI #72) 
-    required int32 OCTAVE = 2 [default = 5];    //      (5+1)   
+    required int32 step = 1 [default = 0 ];     //      C5 = 6 * 12 = (MIDI #72)
+    required MIDI_OCTAVE octave = 2 [default = 5];    //      (5+1)
 }
 
 message MIDI_SEQUENCE {
@@ -59,7 +63,7 @@ message MS3KG {
             optional string password = 2;
         }
     }
-    
+
     optional App applications = 1;
     //optional AP_INFO apInfo = 2;
 
@@ -82,7 +86,7 @@ message MS3KG {
         optional MagicPov magicPov = 2;
         optional Light light = 3;
         optional Magnet magnet = 4;
-        optional System system = 5; 
+        optional System system = 5;
         optional Remote remote = 6;
         optional Beat beat = 7;
         optional Countdown countdown = 8;
@@ -150,7 +154,7 @@ message MS3KG {
             optional RGB color = 3;
         }
 
-        message Countdown { 
+        message Countdown {
 
             enum Mode {
                 DOWN_1S = 0;
@@ -161,7 +165,7 @@ message MS3KG {
                 DOWN_5M = 5;
                 DOWN_10M = 6;
                 DOWN_30M = 7;
-            }            
+            }
 
             optional Mode mode = 1 [ default = DOWN_1M ];
 
