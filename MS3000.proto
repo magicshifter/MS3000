@@ -47,8 +47,12 @@ message MIDI_OCTAVE {
     required int32 v = 1 [default = 5];    //      (5+1)
 }
 
+message MIDI_INTERVALS {
+    required int32 v = 1 [default = 0]; // C
+}
+
 message MIDI_STEP {
-    required int32 step = 1 [default = 0 ];     //      C5 = 6 * 12 = (MIDI #72)
+    required MIDI_INTERVALS step = 1 [default = 0 ];     //      C5 = 6 * 12 = (MIDI #72)
     required MIDI_OCTAVE octave = 2;
 }
 
