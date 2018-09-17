@@ -2,3 +2,4 @@ MS3000GlobalPBuffer.Modes.current max_size:32
 MS3000GlobalPBuffer.Modes.Light.name max_size:32
 MS3000GlobalPBuffer.networkName max_size:32
 MS3000GlobalPBuffer.Modes.MagicPov.image max_size:32
+MS3000GlobalPBuffer.Modes.Sequi.sequence max_size:8
