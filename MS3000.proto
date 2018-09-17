@@ -15,6 +15,8 @@
 
 syntax = "proto2";
 
+import "nanopb.proto";
+
 message RGB {
     // !J! safety orange TODO: s/255, 121, 0/ -> 0/
     required int32 R = 1 [default = 255];
@@ -51,7 +53,7 @@ message MIDI_STEP {
 }
 
 message MIDI_SEQUENCE {
-    repeated MIDI_STEP steps = 1;
+      repeated MIDI_STEP steps = 1 [(nanopb).max_count = 8];
 }
 
 // MS3000 Global object
