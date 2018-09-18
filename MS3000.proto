@@ -52,7 +52,7 @@ message MIDI_INTERVALS {
 }
 
 message MIDI_STEP {
-    required MIDI_INTERVALS step = 1 [default = 0 ];     //      C5 = 6 * 12 = (MIDI #72)
+    required MIDI_INTERVALS interval = 1;
     required MIDI_OCTAVE octave = 2;
 }
 
