@@ -44,10 +44,10 @@ message RGB {
 //
 
 message MIDI_OCTAVE {
-    required int32 v = 1 [default = 5];    //      (5+1)
+    required int32 o = 1 [default = 5];    //      (5+1)
 }
 
-message MIDI_INTERVALS {
+message MIDI_INTERVALS{
     required int32 v = 1 [default = 0]; // C
 }
 
