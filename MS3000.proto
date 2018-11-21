@@ -71,13 +71,13 @@ message MS3KG {
         }
     }
 
-    optional App applications = 1;
+    optional App apps = 1;
     //optional AP_INFO apInfo = 2;
 
     message App {
 
         enum T {
-            _MagicPov= 0;
+            _Shake= 0;
             _Light= 1;
             _Magnet= 2;
             _System = 3;
@@ -90,7 +90,7 @@ message MS3KG {
 
         optional T current = 1;
 
-        optional MagicPov magicPov = 2;
+        optional Shake shake = 2;
         optional Light light = 3;
         optional Magnet magnet = 4;
         optional System system = 5;
@@ -99,11 +99,11 @@ message MS3KG {
         optional Countdown countdown = 8;
         optional Arpi arpi = 9;
         optional Sequi sequi = 10;
+        optional Updater updater = 11;
 
-
-        // MODE: magivPOV
-        message MagicPov {
+        message Shake {
             optional string image = 1;
+            optional int32 colorIndex = 2;
         }
 
         message Light {
@@ -117,6 +117,7 @@ message MS3KG {
             optional Mode mode = 1 [ default = RAINBOW ];
             optional RGB color = 2;
             optional int32 colorIndex = 3;
+            optional int32 triggerSpeed = 4;
         }
 
 
@@ -196,6 +197,10 @@ message MS3KG {
 
         message Sequi {
             optional MIDI_SEQUENCE sequence = 1;
+        }
+
+        message Updater {
+            optional int32 shouldReset = 1;
         }
 
     }
