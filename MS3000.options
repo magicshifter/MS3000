@@ -1,4 +1,3 @@
-MS3000GlobalPBuffer.Modes.current max_size:32
-MS3000GlobalPBuffer.Modes.Light.name max_size:32
-MS3000GlobalPBuffer.networkName max_size:32
-MS3000GlobalPBuffer.Modes.MagicPov.image max_size:32
+MS3KG.App.current max_size:32
+MS3KG.App.Shake.image max_size:32
+MS3KG.App.Shake.colorIndex max_size:32
