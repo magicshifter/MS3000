@@ -14,8 +14,7 @@ tooling:
 	@(which pio > /dev/null && echo "You have PlatformIO installed..") || (echo "You must have pio installed, please see: http://platformio.org/" && exit 1) && (which npm > /dev/null && echo "You have NodeJS installed..") || (echo "You must have NodeJS installed, please see: http://nodejs.org/" && exit 1)
 
 MS3000-Assets/README.md MS3000-Firmware/README.md MS3000-WebInterface/README.md:
-	git submodule init && git submodule update --recursive --remote
-	git submodule foreach git checkout master
+	git submodule init && git submodule update
 
 modules:	MS3000-Assets/README.md MS3000-Firmware/README.md MS3000-WebInterface/README.md
 	make -C MS3000-WebInterface/ install && make -C MS3000-WebInterface/ build
