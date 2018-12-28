@@ -104,6 +104,7 @@ message MS3KG {
         message Shake {
             optional string image = 1;
             optional int32 colorIndex = 2;
+            optional int32 bounce = 3;
         }
 
         message Light {
