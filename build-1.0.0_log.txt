@@ -1,0 +1,353 @@
+# !J! Todo: BUILD_PRODUCT_DIR
+rm -rf .pioenvs
+platformio run --target upload --upload-port `pio device list --json-output | python -c 'exec("""\nimport json,sys\n\nobj=json.load(sys.stdin)\nfor y in obj:\n if "10C4:EA60" in y["hwid"].upper():\n  print y["port"]\n""")'`
+Processing esp12e (platform: espressif8266; framework: arduino; board: esp12e)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif8266/esp12e.html
+PLATFORM: Espressif 8266 2.4.0 > Espressif ESP8266 ESP-12E
+HARDWARE: ESP8266 80MHz, 80KB RAM, 4MB Flash
+PACKAGES: 
+ - framework-arduinoespressif8266 3.20603.200130 (2.6.3) 
+ - tool-esptool 1.413.0 (4.13) 
+ - tool-esptoolpy 1.20800.0 (2.8.0) 
+ - tool-mkspiffs 1.200.0 (2.0) 
+ - toolchain-xtensa 2.40802.191122 (4.8.2)
+LDF: Library Dependency Finder -> http://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 41 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- <SPI> 1.0
+|-- <Wire> 1.0
+|-- <miby>
+|-- <base64> 1.0.0
+|-- <Util>
+|-- <ESP8266WiFi> 1.0
+|-- <AppleMIDI> 1.6.1
+|-- <EEPROM> 1.0
+|-- <ESP8266WebServer> 1.0
+|   |-- <ESP8266WiFi> 1.0
+|-- <ESP8266mDNS> 1.2
+|   |-- <ESP8266WiFi> 1.0
+|-- <WifiManager> 0.15.0
+|   |-- <DNSServer> 1.1.1
+|   |   |-- <ESP8266WiFi> 1.0
+|   |-- <ESP8266WebServer> 1.0
+|   |   |-- <ESP8266WiFi> 1.0
+|   |-- <ESP8266WiFi> 1.0
+Building in release mode
+Warning! '-Wl,-T' option for specifying linker scripts is deprecated. Please use 'board_build.ldscript' option in your 'platformio.ini' file.
+Compiling .pio/build/esp12e/src/MS3KOS.cpp.o
+Generating LD script .pio/build/esp12e/ld/local.eagle.app.v6.common.ld
+Compiling .pio/build/esp12e/lib53f/SPI/SPI.cpp.o
+Compiling .pio/build/esp12e/libfd5/Wire/Wire.cpp.o
+Compiling .pio/build/esp12e/lib257/miby/miby.cpp.o
+Compiling .pio/build/esp12e/lib5ca/Base64/Base64.cpp.o
+Archiving .pio/build/esp12e/libe4c/libUtil.a
+Indexing .pio/build/esp12e/libe4c/libUtil.a
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/BearSSLHelpers.cpp.o
+Archiving .pio/build/esp12e/lib257/libmiby.a
+Indexing .pio/build/esp12e/lib257/libmiby.a
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/CertStoreBearSSL.cpp.o
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/ESP8266WiFi.cpp.o
+Archiving .pio/build/esp12e/lib5ca/libBase64.a
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/ESP8266WiFiAP.cpp.o
+Indexing .pio/build/esp12e/lib5ca/libBase64.a
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/ESP8266WiFiGeneric.cpp.o
+In file included from src/msTypes.h:4:0,
+                 from src/msGlobals.h:6,
+                 from src/MS3KOS.cpp:32:
+src/Modes/BaseMode.h: In member function 'virtual bool MagicShifterBaseMode::step()':
+src/Modes/BaseMode.h:26:23: warning: no return statement in function returning non-void [-Wreturn-type]
+  virtual bool step() {};
+                       ^
+Archiving .pio/build/esp12e/libfd5/libWire.a
+Indexing .pio/build/esp12e/libfd5/libWire.a
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/ESP8266WiFiMulti.cpp.o
+Archiving .pio/build/esp12e/lib53f/libSPI.a
+Indexing .pio/build/esp12e/lib53f/libSPI.a
+In file included from src/msSystem.h:24:0,
+                 from src/MS3KOS.cpp:36:
+src/Hardware/LEDHardware.h: In member function 'void MagicShifterLEDs::loadBufferShort(byte*)':
+src/Hardware/LEDHardware.h:64:10: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+    if (i & 4 == 0)
+          ^
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/ESP8266WiFiSTA-WPS.cpp.o
+src/Hardware/LEDHardware.h: In member function 'void MagicShifterLEDs::loadBufferLong(byte*)':
+src/Hardware/LEDHardware.h:81:10: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+    if (i & 4 == 0)
+          ^
+In file included from src/msSystem.h:25:0,
+                 from src/MS3KOS.cpp:36:
+src/Hardware/Sensor.h: In member function 'bool MagicShifterAccelerometer::setupSensor()':
+src/Hardware/Sensor.h:195:44: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+    writeRegister(0x6A, 0x80 | magThreshold & 0xFF);
+                                            ^
+In file included from src/msSystem.h:27:0,
+                 from src/MS3KOS.cpp:36:
+src/msImage.h: In function 'void PlotBitmapColumn1Bit(const MSBitmap*, uint16_t, uint8_t, byte*)':
+src/msImage.h:25:10: warning: unused variable 'ledOffs' [-Wunused-variable]
+  uint8_t ledOffs = ledIdx;
+          ^
+src/msImage.h: In member function 'int MagicShifterImageText::getHeight()':
+src/msImage.h:228:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  };
+  ^
+src/msImage.h: In static member function 'static bool MagicShifterImage::LoadBitmapFile(const char*, MSBitmap*)':
+src/msImage.h:295:7: warning: variable 'bmResult' set but not used [-Wunused-but-set-variable]
+   int bmResult;
+       ^
+src/msImage.h: In static member function 'static bool MagicShifterImage::LoadBitmapBuffer(const char*, MSBitmap*)':
+src/msImage.h:315:7: warning: variable 'bmResult' set but not used [-Wunused-but-set-variable]
+   int bmResult;
+       ^
+In file included from src/MS3KOS.cpp:36:0:
+src/msSystem.h: In member function 'void MagicShifterSystem::setMode(int)':
+src/msSystem.h:642:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (newMode < msGlobals.ggModeList.size()) {
+                                           ^
+src/msSystem.h: In member function 'void MagicShifterSystem::step()':
+src/msSystem.h:1127:48: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    (lowBatteryMillis + (10 * 1000) < msGlobals.ggCurrentMillis)) { // 10 seconds 
+                                                ^
+In file included from src/msSystem.h:1203:0,
+                 from src/MS3KOS.cpp:36:
+src/CommandInterface.h: In function 'void CommandInterfacePoll()':
+src/CommandInterface.h:97:34: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for (int i = 0; i < sizeof(fnA); i++) {
+                                  ^
+src/CommandInterface.h:88:9: warning: unused variable 'sector' [-Wunused-variable]
+    byte sector;
+         ^
+src/CommandInterface.h:51:8: warning: unused variable 'executed' [-Wunused-variable]
+   bool executed = false;
+        ^
+In file included from src/WebServer/WebServer.h:6:0,
+                 from src/MS3KOS.cpp:39:
+src/WebServer/WebServerAPI.h: In function 'void handleLedSet()':
+src/WebServer/WebServerAPI.h:568:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for (int i = 0; i < dataLen; i += 5) {
+                       ^
+In file included from src/WebServer/WebServer.h:7:0,
+                 from src/MS3KOS.cpp:39:
+src/WebServer/WebServerAutoConnect.h: In function 'bool TryConnect(APAuth&, int)':
+src/WebServer/WebServerAutoConnect.h:83:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    || millis() > startTime + timeoutMs) {
+                              ^
+src/WebServer/WebServerAutoConnect.h: In function 'bool AutoConnect()':
+src/WebServer/WebServerAutoConnect.h:129:27: warning: 'void ESP8266WiFiGenericClass::onEvent(WiFiEventCb, WiFiEvent_t)' is deprecated (declared at /Users/j/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src/ESP8266WiFiGeneric.h:56) [-Wdeprecated-declarations]
+     WiFi.onEvent(WiFiEvent);
+                           ^
+src/WebServer/WebServerAutoConnect.h:199:8: warning: statement has no effect [-Wunused-value]
+   false;
+        ^
+In file included from src/Modes/Modes.h:8:0,
+                 from src/MS3KOS.cpp:43:
+src/Modes/UI/ShakeSync.h: In member function 'bool POVShakeSync::update(float)':
+src/Modes/UI/ShakeSync.h:111:14: warning: unused variable 'currentPoint' [-Wunused-variable]
+   ShakePoint currentPoint;
+              ^
+In file included from src/Modes/Modes.h:12:0,
+                 from src/MS3KOS.cpp:43:
+src/Modes/MagicMagnet.h: In member function 'virtual bool MagicMagnetMode::step()':
+src/Modes/MagicMagnet.h:106:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/ESP8266WiFiSTA.cpp.o
+In file included from src/Modes/Modes.h:14:0,
+                 from src/MS3KOS.cpp:43:
+src/Modes/MagicShake.h: In member function 'virtual bool MagicShakeMode::step()':
+src/Modes/MagicShake.h:186:10: warning: unused variable 'fY' [-Wunused-variable]
+    float fY = msGlobals.ggAccel[YAXIS];
+          ^
+In file included from src/Modes/Modes.h:15:0,
+                 from src/MS3KOS.cpp:43:
+src/Modes/MagicLight.h: In member function 'virtual bool MagicLightMode::step()':
+src/Modes/MagicLight.h:157:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+In file included from src/Modes/Modes.h:16:0,
+                 from src/MS3KOS.cpp:43:
+src/Modes/MagicRemote.h: In member function 'virtual bool MagicRemoteMode::step()':
+src/Modes/MagicRemote.h:22:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+In file included from src/Modes/Modes.h:17:0,
+                 from src/MS3KOS.cpp:43:
+src/Modes/MagicBeat.h: In member function 'virtual bool MagicBeatMode::step()':
+src/Modes/MagicBeat.h:152:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  } 
+  ^
+In file included from src/Modes/Modes.h:19:0,
+                 from src/MS3KOS.cpp:43:
+src/Modes/ModeSelector.h: In member function 'void ModeSelectorMode::setText(const char*)':
+src/Modes/ModeSelector.h:12:11: warning: unused variable 'aRED' [-Wunused-variable]
+   MSColor aRED = { 0xff, 0x00, 0x00 };
+           ^
+src/Modes/ModeSelector.h: In member function 'void ModeSelectorMode::setIndex(int)':
+src/Modes/ModeSelector.h:39:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (idx >= msGlobals.ggModeList.size()) {
+                                        ^
+src/MS3KOS.cpp: In function 'void loop()':
+src/MS3KOS.cpp:109:59: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (msGlobals.ggCurrentMode < msGlobals.ggModeList.size()) {
+                                                           ^
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/ESP8266WiFiScan.cpp.o
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/WiFiClient.cpp.o
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/WiFiClientSecureAxTLS.cpp.o
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/WiFiClientSecureBearSSL.cpp.o
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/WiFiServer.cpp.o
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/WiFiServerSecureAxTLS.cpp.o
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/WiFiServerSecureBearSSL.cpp.o
+Compiling .pio/build/esp12e/liba77/ESP8266WiFi/WiFiUdp.cpp.o
+Compiling .pio/build/esp12e/lib058/AppleMIDI_ID222/AppleMidi.cpp.o
+Compiling .pio/build/esp12e/libbbf/EEPROM/EEPROM.cpp.o
+Compiling .pio/build/esp12e/lib91e/ESP8266WebServer/detail/mimetable.cpp.o
+Archiving .pio/build/esp12e/lib91e/libESP8266WebServer.a
+Indexing .pio/build/esp12e/lib91e/libESP8266WebServer.a
+Compiling .pio/build/esp12e/lib7d9/ESP8266mDNS/ESP8266mDNS.cpp.o
+Compiling .pio/build/esp12e/lib7d9/ESP8266mDNS/ESP8266mDNS_Legacy.cpp.o
+Archiving .pio/build/esp12e/lib058/libAppleMIDI_ID222.a
+Archiving .pio/build/esp12e/libbbf/libEEPROM.a
+Indexing .pio/build/esp12e/lib058/libAppleMIDI_ID222.a
+Indexing .pio/build/esp12e/libbbf/libEEPROM.a
+Compiling .pio/build/esp12e/lib7d9/ESP8266mDNS/LEAmDNS.cpp.o
+Compiling .pio/build/esp12e/lib7d9/ESP8266mDNS/LEAmDNS_Control.cpp.o
+Compiling .pio/build/esp12e/lib7d9/ESP8266mDNS/LEAmDNS_Helpers.cpp.o
+Compiling .pio/build/esp12e/lib7d9/ESP8266mDNS/LEAmDNS_Structs.cpp.o
+Compiling .pio/build/esp12e/lib7d9/ESP8266mDNS/LEAmDNS_Transfer.cpp.o
+Archiving .pio/build/esp12e/liba77/libESP8266WiFi.a
+Indexing .pio/build/esp12e/liba77/libESP8266WiFi.a
+Compiling .pio/build/esp12e/lib027/DNSServer/DNSServer.cpp.o
+Compiling .pio/build/esp12e/lib35d/WifiManager_ID567/WiFiManager.cpp.o
+Archiving .pio/build/esp12e/libFrameworkArduinoVariant.a
+Indexing .pio/build/esp12e/libFrameworkArduinoVariant.a
+Compiling .pio/build/esp12e/FrameworkArduino/Esp-frag.cpp.o
+Archiving .pio/build/esp12e/lib027/libDNSServer.a
+Indexing .pio/build/esp12e/lib027/libDNSServer.a
+Compiling .pio/build/esp12e/FrameworkArduino/Esp-version.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/Esp.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/FS.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/FSnoop.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/FunctionalInterrupt.cpp.o
+Archiving .pio/build/esp12e/lib7d9/libESP8266mDNS.a
+Indexing .pio/build/esp12e/lib7d9/libESP8266mDNS.a
+Compiling .pio/build/esp12e/FrameworkArduino/HardwareSerial.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/IPAddress.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/MD5Builder.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/Print.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/Schedule.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/StackThunk.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/Stream.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/StreamString.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/Tone.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/Updater.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/WMath.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/WString.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/abi.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/base64.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/cbuf.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/cont.S.o
+Compiling .pio/build/esp12e/FrameworkArduino/cont_util.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_app_entry_noextra4k.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_eboot_command.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_features.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_flash_utils.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_i2s.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_main.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_noniso.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_phy.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_postmortem.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_si2c.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_sigma_delta.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_spi_utils.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_timer.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_waveform.cpp.o
+Archiving .pio/build/esp12e/lib35d/libWifiManager_ID567.a
+Indexing .pio/build/esp12e/lib35d/libWifiManager_ID567.a
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_wiring.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_wiring_analog.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_wiring_digital.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_wiring_pulse.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_wiring_pwm.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/core_esp8266_wiring_shift.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/crc32.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/debug.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/flash_hal.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/gdb_hooks.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/heap.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/libb64/cdecode.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/libb64/cencode.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/libc_replacements.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/sntp-lwip2.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/spiffs/spiffs_cache.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/spiffs/spiffs_check.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/spiffs/spiffs_gc.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/spiffs/spiffs_hydrogen.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/spiffs/spiffs_nucleus.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/spiffs_api.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/sqrt32.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/time.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/uart.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/umm_malloc/umm_info.c.o
+Compiling .pio/build/esp12e/FrameworkArduino/umm_malloc/umm_integrity.c.o
+Compiling .pio/build/esp12e/FrameworkArduino/umm_malloc/umm_local.c.o
+Compiling .pio/build/esp12e/FrameworkArduino/umm_malloc/umm_malloc.cpp.o
+Compiling .pio/build/esp12e/FrameworkArduino/umm_malloc/umm_poison.c.o
+Archiving .pio/build/esp12e/libFrameworkArduino.a
+Indexing .pio/build/esp12e/libFrameworkArduino.a
+Linking .pio/build/esp12e/firmware.elf
+Retrieving maximum program size .pio/build/esp12e/firmware.elf
+Building .pio/build/esp12e/firmware.bin
+Checking size .pio/build/esp12e/firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [=====     ]  52.3% (used 42876 bytes from 81920 bytes)
+Flash: [====      ]  39.3% (used 410392 bytes from 1044464 bytes)
+Creating BIN file ".pio/build/esp12e/firmware.bin" using ".pio/build/esp12e/firmware.elf"
+Configuring upload protocol...
+AVAILABLE: espota, esptool
+CURRENT: upload_protocol = esptool
+Looking for upload port...
+Use manually specified: /dev/cu.SLAB_USBtoUART
+Uploading .pio/build/esp12e/firmware.bin
+esptool.py v2.8
+Serial port /dev/cu.SLAB_USBtoUART
+Connecting........_____.
+Chip is ESP8266EX
+Features: WiFi
+Crystal is 26MHz
+MAC: 5c:cf:7f:12:26:60
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 921600
+Changed.
+Configuring flash size...
+Auto-detected Flash size: 4MB
+Compressed 414544 bytes to 292534...
+
+Writing at 0x00000000... (5 %)
+Writing at 0x00004000... (11 %)
+Writing at 0x00008000... (16 %)
+Writing at 0x0000c000... (22 %)
+Writing at 0x00010000... (27 %)
+Writing at 0x00014000... (33 %)
+Writing at 0x00018000... (38 %)
+Writing at 0x0001c000... (44 %)
+Writing at 0x00020000... (50 %)
+Writing at 0x00024000... (55 %)
+Writing at 0x00028000... (61 %)
+Writing at 0x0002c000... (66 %)
+Writing at 0x00030000... (72 %)
+Writing at 0x00034000... (77 %)
+Writing at 0x00038000... (83 %)
+Writing at 0x0003c000... (88 %)
+Writing at 0x00040000... (94 %)
+Writing at 0x00044000... (100 %)
+Wrote 414544 bytes (292534 compressed) at 0x00000000 in 4.5 seconds (effective 743.6 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+========================= [SUCCESS] Took 20.70 seconds =========================
