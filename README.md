@@ -52,7 +52,7 @@ We provide a Makefile for your use in building and using your own Firmware.
 
 You can build either a) a Firmware (MS3KOS) update, or a) a complete build.
 
-# A) To build MS3KOS on Ubuntu:
+## A) To build MS3KOS on Ubuntu:
 
 	* we get ubuntu ready:
 		`apt install protobuf-compiler python-protobuf python3-pip git build-essential`
@@ -72,7 +72,7 @@ You can build either a) a Firmware (MS3KOS) update, or a) a complete build.
 
 	* at this point, new MS3KOS firmware should be on your magicShifter!
 
-# B) To get started with a complete build, which includes the onboard Web Interface as well as a filesystem, clone this repository to your own local directory for example:
+## B) To get started with a complete build, which includes the onboard Web Interface as well as a filesystem, clone this repository to your own local directory for example:
 
     $ git clone https://github.com/magicshifter/MS3000.git && cd ./MS3000
     
