@@ -55,10 +55,10 @@ You can build either a) a Firmware (MS3KOS) update, or a) a complete build.
 # A) To build MS3KOS on Ubuntu:
 
 	* we get ubuntu ready:
-		`apt install protobuf-compiler python-protobuf python3-pip build-essential`
+		`apt install protobuf-compiler python-protobuf python3-pip git build-essential`
 
 	* we install some python tools - platformio and protocol buffers:
-		`pip3 install platformio python-protobuf`
+		`pip3 install platformio python3-protobuf`
 
 	* clone the repo:
 		`git clone https://github.com/magicshifter/MS3000.git`
