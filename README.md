@@ -50,8 +50,11 @@ Building and Using your own Firmware
 ------------------------------------
 We provide a Makefile for your use in building and using your own Firmware.  
 
+You can build either a) a Firmware (MS3KOS) update, or a) a complete build.
 
-To get started, clone this repository to your own local directory for example:
+To build MS3KOS - please follow the directions in MS3000-Firmware/MS3OS/readme.md
+
+To get started with a complete build, clone this repository to your own local directory for example:
 
     $ git clone https://github.com/magicshifter/MS3000.git && cd ./MS3000
     
