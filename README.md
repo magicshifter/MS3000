@@ -1,4 +1,4 @@
-# deprecated please use (the improved monorepo version of this) at https://github.com/magicshifter/MS4000
+# DEPRECATED: Please use the improved (and fully compatible) monorepo version at https://github.com/magicshifter/MS4000
 
 2.0-prep
 Master Repository for the MagicShifter 3000 Operating System project
